@@ -1,0 +1,13 @@
+import re
+
+def korrektnost(fio):
+    pattern = r'^[А-ЯЁ][а-яё-]*\s[А-ЯЁ][а-яё-]*\s[А-ЯЁ][а-яё-]*$'
+    if re.match(pattern, fio):
+        print("Данные введены корректно")
+        return True
+    else:
+        print("Данные введены некорректно")
+        return False
+
+fio = str(input())
+korrektnost(fio)
