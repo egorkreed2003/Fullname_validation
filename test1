@@ -1,0 +1,28 @@
+def korrektnost(fio):
+    if not fio:
+        print("Ввод некорректный")
+        return False
+
+    if len(fio.split()) != 3:
+        print("Ввод некорректный")
+        return False
+
+    for i in fio.split():
+        if not i.isalpha():
+            print("Ввод некорректный")
+            return False
+        if not i.isupper() and not i[0].isupper():
+            print("Ввод некорректный")
+            return False
+        for k in i:
+            if not k.isalpha() and k != '-':
+                print("Ввод некорректный")
+                return False
+            if k.islower():
+                print("Ввод некорректный")
+                return False
+    return True
+
+
+fio = str(input())
+korrektnost(fio)
